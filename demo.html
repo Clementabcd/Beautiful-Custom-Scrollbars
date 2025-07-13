@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Scrollbars Demo</title>
+  <link rel="stylesheet" href="styles/liquid-glass.css" id="current-style">
+  <style>
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #f5f5f7;
+    }
+    .style-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+    .content-block {
+      height: 150vh;
+      margin: 3rem 0;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="style-selector">
+    <label for="style-select">Choose Style:</label>
+    <select id="style-select" onchange="changeStyle(this.value)">
+      <option value="liquid-glass">Liquid Glass</option>
+      <option value="aurora-borealis">Aurora Borealis</option>
+      <option value="marble-vein">Marble Vein</option>
+      <option value="cyberpunk-neon">Cyberpunk Neon</option>
+      <option value="nature-moss">Nature Moss</option>
+      <option value="galaxy-swirl">Galaxy Swirl</option>
+      <option value="golden-luxury">Golden Luxury</option>
+      <option value="minimal-glass">Minimal Glass</option>
+    </select>
+  </div>
 
+  <h1>Custom Scrollbars Demo</h1>
+  
+  <div class="content-block">
+    <h2>Scroll down to see the effect</h2>
+    <p>Each style has unique characteristics. Try selecting different options from the dropdown.</p>
+  </div>
+
+  <div class="content-block">
+    <h2>How These Work</h2>
+    <p>These styles use modern CSS features like:</p>
+    <ul>
+      <li>::-webkit-scrollbar pseudo-elements</li>
+      <li>backdrop-filter for glass effects</li>
+      <li>CSS animations for dynamic styles</li>
+      <li>SVG backgrounds for textures</li>
+    </ul>
+  </div>
+
+  <script>
+    function changeStyle(style) {
+      document.getElementById('current-style').href = `styles/${style}.css`;
+    }
+  </script>
+</body>
+</html>
