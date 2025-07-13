@@ -1,0 +1,34 @@
+/**
+ * Aurora Borealis - Animated Gradient
+ * Color-shifting effect like northern lights
+ */
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a1a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff00cc, #00ffcc, #00ccff, #cc00ff);
+  background-size: 300% 300%;
+  animation: aurora 12s ease infinite;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #00ccff #0a0a1a;
+}
